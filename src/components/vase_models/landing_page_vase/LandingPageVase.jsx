@@ -84,7 +84,7 @@ const LandingPageVase = ({ onLoaded = () => {} }) => {
         <directionalLight position={[2, 2, 5]} intensity={1} />
         <Suspense fallback={null}>
           <Vase onLoaded={() => setIsLoading(false)} />
-          <OrbitControls ref={controlsRef} />
+          <OrbitControls ref={controlsRef} enableZoom={false}/>
         </Suspense>
       </Canvas>
     </>
