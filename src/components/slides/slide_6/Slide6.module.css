@@ -1,0 +1,226 @@
+.slide-6 {
+    position: relative;
+    width: 100%;
+    height: 120vh;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    background-color: #0b52bd;
+    color: white;
+    font-family: 'Thicker Regular';
+    padding: 40px;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.slide-6.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.info-content {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0px 300px;
+    text-align: center;
+}
+
+.info-paragraph {
+    font-size: 25px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.info-paragraph.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.divider {
+    width: 400px;
+    height: 40px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.headline-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    position: relative;
+    gap: 0;
+}
+
+.headline-content {
+    flex: 0 0 65%;
+    text-align: left;
+    max-width: calc(100% - 200px - 100px);
+    position: relative;
+}
+
+.headline {
+    font-size: 60px;
+    font-weight: bold;
+    line-height: 1;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-family: 'Kicker Black';
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.headline.slide-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.cta-badge {
+    background-color: #333;
+    color: white;
+    padding: 10px 25px;
+    display: inline-block;
+    font-size: 35px;
+    font-family: 'Kicker Black';
+    font-weight: bold;
+    text-transform: uppercase;
+    transform: rotate(-2deg) scale(0);
+    position: absolute;
+    left: 200px;
+    bottom: 10px;
+    z-index: 1;
+    opacity: 0;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s ease;
+}
+
+.cta-badge.bounce-in {
+    opacity: 1;
+    transform: rotate(-2deg) scale(1);
+    animation: badge-wiggle 1s 0.5s ease-in-out;
+}
+
+@keyframes badge-wiggle {
+    0%, 100% { transform: rotate(-2deg) scale(1); }
+    33% { transform: rotate(1deg) scale(1.05); }
+    66% { transform: rotate(-3deg) scale(1.05); }
+}
+
+.image-placeholder {
+    flex: 0 0 16%;
+    height: 250px;
+    width: 100px;
+    background-color: white;
+    border: 5px solid white;
+    margin-left: 0;
+    opacity: 0;
+    transform: translateX(50px) rotate(-10deg);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.image-placeholder.fade-rotate-in {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+}
+
+.sparkle {
+    position: absolute;
+    font-size: 24px;
+    color: white;
+    animation: twinkle 2s infinite;
+}
+
+.sparkle-1 {
+    top: 675px;
+    left: 110px;
+}
+
+.background-sparkle {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.7);
+    animation: twinkle 3s infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.2; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes shimmer {
+    0% { opacity: 0.3; }
+    50% { opacity: 1; }
+    100% { opacity: 0.3; }
+}
+
+.star-divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+}
+
+.star {
+    font-size: 50px;
+    margin: 0 5px;
+    animation: shimmer 2s infinite;
+}
+
+.pulse-star {
+    animation: pulse-star 3s infinite;
+}
+
+@keyframes pulse-star {
+    0%, 100% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.2); opacity: 1; }
+}
+
+.star:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.star:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.star:nth-child(5) {
+    animation-delay: 0.8s;
+}
+
+.star:nth-child(6) {
+    animation-delay: 1.2s;
+}
+
+.line {
+    height: 2px;
+    background-color: white;
+    width: 80px;
+    margin: 0 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+    animation: line-shimmer 3s infinite linear;
+}
+
+@keyframes line-shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}

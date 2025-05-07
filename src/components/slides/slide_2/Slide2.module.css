@@ -1,0 +1,365 @@
+.slide2 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #f5f0e3; /* Beige background similar to the image */
+    background-image: url('../../assets/images/page_2_background.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 20px;
+}
+
+
+.slide-2.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-2.visible::before {
+    opacity: 1;
+}
+
+.potteryDisplay {
+    width: 100%;
+    height: 50%;
+    margin: 0 auto;
+    overflow: visible;
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+.potteryDisplay.visible {
+    opacity: 1;
+}
+
+.vaseContainer {
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 200px ;
+    padding: 10px;
+}
+
+.potteryItem {
+    height: 300px;
+    width: auto;
+    object-fit: contain;
+    opacity: 0;
+    filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.2));
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.potteryItem.animatePottery {
+    animation: floatUp 1s ease-out forwards;
+}
+
+.potteryItem:hover {
+    transform: translateY(-10px) scale(1.05);
+    filter: drop-shadow(0 15px 12px rgba(0, 0, 0, 0.25));
+}
+
+.contentContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+
+.titleContainerSlide2 {
+    position: relative;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    padding: 0 30px;
+}
+
+.titleSlide2 {
+    font-family: 'Kicker Black', sans-serif;
+    font-size: 5rem;
+    color: #2a2417; /* Dark brown color as seen in the image */
+    text-transform: uppercase;
+    line-height: 1;
+    letter-spacing: 1px;
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: scale(0.95);
+    font-weight: 900;
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+.titleSlide2.animateTitle {
+    animation: scaleIn 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.xDecoration {
+    color: #0047ff; /* Bright blue as in the image */
+    font-size: 50px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.titleContainerSlide2:hover .xDecoration {
+    animation: pulse 2s infinite;
+}
+
+.xDecoration i {
+    text-shadow: 1px 0 currentColor, -1px 0 currentColor,
+        0 1px currentColor, 0 -1px currentColor;
+}
+
+.xLeft {
+    left: 5%;
+    animation: slideInLeft 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.2s forwards;
+}
+
+.xRight {
+    right: 5%;
+    animation: slideInRight 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.2s forwards;
+}
+
+.descriptionSlide2 {
+    font-size: 1.3rem;
+    color: #3a3229; /* Dark color for readability */
+    text-align: center;
+    max-width: 800px;
+    line-height: 1.5;
+    margin: 15px auto 0;
+    font-family: 'Thicker Regular', serif; /* Serif font as in the image */
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.5s ease;
+}
+
+.descriptionSlide2.animateDescription {
+    animation: fadeInUp 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
+}
+
+/* Swiper styling */
+.potterySwiper {
+    width: 100%;
+    height: 100%;
+    padding: 20px 0;
+}
+
+.swiperSlide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: auto;
+    transition: all 0.5s ease;
+}
+
+/* Ensure the center slide appears more prominent */
+:global(.swiper-slide-active) .potteryItem {
+    transform: scale(1.1);
+    filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.3));
+    transition: all 0.5s ease;
+}
+
+:global(.swiper-slide-prev) .potteryItem,
+:global(.swiper-slide-next) .potteryItem {
+    transform: scale(0.85);
+    opacity: 0.7;
+    transition: all 0.5s ease;
+}
+
+.swiperSlide:hover {
+    z-index: 2;
+}
+
+/* Custom styling for Swiper navigation */
+:global(.swiper-button-next),
+:global(.swiper-button-prev) {
+    color: #0047ff !important;
+    background: rgba(255, 255, 255, 0.7);
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+:global(.swiper-button-next:hover),
+:global(.swiper-button-prev:hover) {
+    background: rgba(255, 255, 255, 0.9);
+    transform: scale(1.1);
+}
+
+:global(.swiper-button-next:after),
+:global(.swiper-button-prev:after) {
+    font-size: 20px !important;
+    font-weight: bold;
+}
+
+/* Custom styling for Swiper pagination */
+:global(.swiper-pagination-bullet) {
+    background: #0047ff !important;
+    opacity: 0.5;
+}
+
+:global(.swiper-pagination-bullet-active) {
+    opacity: 1;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-10px) scale(1.02);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes growHeight {
+    0% {
+        height: 0;
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    100% {
+        height: 150px;
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.03);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px) translateY(-90%) scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) translateY(-90%) scale(1);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px) translateY(-90%) scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) translateY(-90%) scale(1);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: translateY(-90%) scale(1);
+    }
+    50% {
+        transform: translateY(-90%) scale(1.1);
+    }
+    100% {
+        transform: translateY(-90%) scale(1);
+    }
+}
+
+/* For scroll animations */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .titleSlide2 {
+        font-size: 4.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .titleSlide2 {
+        font-size: 3.5rem;
+    }
+    
+    .descriptionSlide2 {
+        font-size: 1.2rem;
+    }
+    
+    .potteryItem {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .titleSlide2 {
+        font-size: 2.5rem;
+    }
+    
+    .xDecoration {
+        display: none;
+    }
+    
+    .blueLine {
+        height: 100px;
+    }
+    
+    .potteryItem {
+        height: 150px;
+    }
+}
