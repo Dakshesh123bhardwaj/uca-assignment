@@ -30,24 +30,6 @@ const Slide5 = () => {
         };
     }, []);
 
-    // Add mouse parallax effect to vase
-    useEffect(() => {
-        const handleMouseMove = (e) => {
-            if (!vaseRef.current || !visible) return;
-            
-            const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
-            const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
-            
-            vaseRef.current.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
-        };
-
-        window.addEventListener('mousemove', handleMouseMove);
-        
-        return () => {
-            window.removeEventListener('mousemove', handleMouseMove);
-        };
-    }, [visible]);
-
     // Artist information with additional details
     const artistInfo = [
         {
