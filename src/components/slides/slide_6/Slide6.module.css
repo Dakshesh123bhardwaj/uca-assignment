@@ -116,9 +116,10 @@
 
 .image-placeholder {
     flex: 0 0 16%;
-    height: 250px;
+    height: 300px;
     width: 100px;
-    background-color: white;
+    background: url('../../assets/images/qr.png');
+    background-size: cover;
     border: 5px solid white;
     margin-left: 0;
     opacity: 0;
