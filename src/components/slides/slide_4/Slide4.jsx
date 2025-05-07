@@ -13,7 +13,7 @@ const Slide4 = () => {
     }, []);
 
     return (
-        <section className={`${styles['slide']} ${styles['slide-4']}`}>
+        <section className={`${styles['slide']} ${styles['slide-4']}`} id='slide4'>
             <div className={styles['title-container-slide-4']}>
                 <div className={styles['title-slide-4']}>
                     GREEK<br />POTTERY

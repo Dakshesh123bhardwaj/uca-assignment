@@ -54,15 +54,15 @@ const Slide1 = () => {
 
   // Handle CTA button click
   const handleBeginClick = () => {
-    setButtonClicked(true)
-
+    setButtonClicked(true);
+  
     setTimeout(() => {
-      window.scrollTo({
-        top: window.innerHeight,
-        behavior: "smooth",
-      })
-    }, 500)
-  }
+      const slide2 = document.getElementById("slide2");
+      if (slide2) {
+        slide2.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 500);
+  };
 
   // Handle vase load completion
   const handleVaseLoaded = () => {

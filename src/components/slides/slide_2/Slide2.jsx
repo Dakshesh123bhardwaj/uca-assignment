@@ -71,7 +71,7 @@ const Slide2 = () => {
     const vaseImages = [vase1, vase2, vase3, vase4, vase5, vase6];
 
     return (
-        <div ref={slideRef} className={styles.slide2}>
+        <div ref={slideRef} className={styles.slide2} id="slide2">
             <div className={`${styles.potteryDisplay} ${isVisible ? styles.visible : ''}`}>
                 <Swiper
                     modules={[FreeMode, Autoplay, Navigation, Pagination]}

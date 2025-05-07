@@ -65,7 +65,7 @@ const VaseViewer = ({
           {enableControls && (
             <OrbitControls
               ref={setControls} // Use state-based ref
-              enableZoom={false}
+              enableZoom={true}
             />
           )}
         </Suspense>

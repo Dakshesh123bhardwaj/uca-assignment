@@ -73,12 +73,15 @@ const Slide3 = () => {
     }, [isVisible]);
 
     const scrollTo = (direction) => {
-        if (direction === "up") {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        } else if (direction === "down") {
-            window.scrollBy({ top: window.innerHeight, behavior: "smooth" });
+        const targetId = direction === "up" ? "slide2" : direction === "down" ? "slide4" : null;
+      
+        if (targetId) {
+          const element = document.getElementById(targetId);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
         }
-    };
+      };
 
     // Cursor effect for adding sparkles
     const [sparkles, setSparkles] = useState([]);
